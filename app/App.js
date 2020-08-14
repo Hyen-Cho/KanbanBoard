@@ -4,7 +4,11 @@ import {render} from 'react-dom';
 class App extends Component {
   render(){
     return (
-      <h1>Hello World</h1>
+      <select value="B">
+        <option value="A">Mobile</option>
+        <option value="B">Work</option>
+        <option value="C">Home</option>
+      </select>
     );
   }
 }

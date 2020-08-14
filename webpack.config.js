@@ -5,7 +5,7 @@ var webpack = require('webpack');
  */
 var config = {
   devtool: 'eval-source-map',
-  entry:  __dirname + "/app/App.js",
+  entry: __dirname + "/app/kanbanboard/App.jsx",
   output: {
     path: __dirname + "/public",
     filename: "bundle.js"
@@ -16,7 +16,7 @@ var config = {
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        presets: ['es2015','react']
+        presets: ['es2015', 'react']
       }
     }]
   },
@@ -35,9 +35,9 @@ if (process.env.NODE_ENV === 'production') {
   config.devtool = false;
   config.plugins = [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({comments: false}),
+    new webpack.optimize.UglifyJsPlugin({ comments: false }),
     new webpack.DefinePlugin({
-      'process.env': {NODE_ENV: JSON.stringify('production')}
+      'process.env': { NODE_ENV: JSON.stringify('production') }
     })
   ];
 };
